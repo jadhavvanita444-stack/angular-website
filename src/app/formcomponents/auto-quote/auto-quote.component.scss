@@ -1,0 +1,86 @@
+@import '../../../scss/breakpoint.scss';
+
+.quote-card {
+
+  width: 340px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin-top: 20px;
+}
+
+.quote-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.form-control {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #dedede;
+  font-size: 14px;
+
+  &.--pencil {
+    background-image: url('../../../assets/images/pencil.png');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+  }
+  &.--email{
+    background-image: url('../../../assets/images/Border.png');
+     background-repeat: no-repeat;
+     background-position: right 0px center;
+  }
+  &.--phone{
+    background-image: url('../../../assets/images/call.png');
+    background-repeat: no-repeat;
+    background-position: right 0px center;
+  }
+
+
+  &:focus {
+    outline: none;
+    border-color: #d63031;
+    box-shadow: 0 0 0 2px rgba(214, 48, 49, 0.15);
+  }
+}
+
+.radio-row {
+  font-size: 14px;
+
+  label {
+    margin-right: 20px;
+
+    input {
+      margin-right: 4px;
+    }
+  }
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  background: #d63031;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+}
+
+.text-danger {
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.thank-you {
+  text-align: center;
+}

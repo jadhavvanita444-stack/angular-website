@@ -1,0 +1,282 @@
+<section class="hero-section">
+
+  <div class="hero-section-container">
+    <!-- LEFT SIDE -->
+    <div class="left-box">
+      <span class="tag">品質保証と納期遵守をプライオリティに徹底追及</span>
+      <h1 class="hero-title">
+        <span>研究者に選ばれる</span>
+        <span>英文校正 —</span>
+        <span>研究支援エナゴ</span>
+      </h1>
+
+      <p class="subtitle">
+        AI 時代により一層求められるインテグリティを保証する英文校正・英文校閲。
+        研究分野と学術英語の専門家英語ネイティブが対応。
+      </p>
+
+      <div class="btn-row">
+        <button class="btn primary">英文校正サービス比較</button>
+        <button class="btn outline">料金と納期</button>
+        <button class="btn outline">Enago One とは</button>
+      </div>
+
+      <!-- Statistics -->
+
+    </div>
+
+    <!-- RIGHT SIDE (QUOTE FORM) -->
+    <div class="right-box">
+      <app-auto-quote></app-auto-quote>
+    </div>
+
+  </div>
+
+</section>
+
+<div class="stats-row">
+  <div class="stat">
+    <img src="./assets/images/Service Icons32.png" alt="icon1" loading="lazy">
+    <p>125か国で<span>200万人以上</span><br>の研究者を支援</p>
+  </div>
+
+  <div class="stat">
+    <img src="./assets/images/51.png" alt="icon1" loading="lazy">
+    <p>博士号・修士号取得<span><br>3000名以上の校正者</span></p>
+  </div>
+
+  <div class="stat">
+    <img src="./assets/images/Experience.png" alt="icon1" loading="lazy">
+    <p>校正者の学術経験年数<br><span>19.4年以上</span></p>
+  </div>
+
+  <div class="stat">
+    <img src="./assets/images/Layer 1.png" alt="icon1" loading="lazy">
+    <p>必ず専門分野の<br><span>専門家が校正</span></p>
+  </div>
+</div>
+
+<!-- Logos Row -->
+
+<section class="logos">
+  <ul class="logo-list">
+    <li><img src="./assets/images/logo/ASME.svg" alt="ASME" loading="lazy"></li>
+    <li><img src="./assets/images/logo/blood.svg" alt="blood" loading="lazy"></li>
+    <li><img src="./assets/images/logo/elsevier-official.svg" alt="elsevier-official" loading="lazy"></li>
+    <li><img src="./assets/images/logo/ESC.svg" alt="Esc" loading="lazy"></li>
+    <li><img src="./assets/images/logo/ieee.svg" alt="ieee" loading="lazy"></li>
+    <li><img src="./assets/images/logo/PLOS_logo.svg" alt="PLOS_logo" loading="lazy"></li>
+    <li><img src="./assets/images/logo/QS-Asia-logo.svg" alt="QS-Asia-logo" loading="lazy"></li>
+    <li><img src="./assets/images/logo/Royal Society of Chemistry.svg" alt="Royal Society " loading="lazy"></li>
+    <li><img src="./assets/images/logo/Thieme-Logo.svg" alt="Thieme-Logo" loading="lazy"></li>
+  </ul>
+</section>
+
+
+<section class="service-background">
+  <div class="services-section container my-5">
+
+    <div class="text-center mb-4">
+      <h2 class="section-title">英文校正・英文校閲・ネイティブチェックの３サービス</h2>
+      <p class="section-subtitle">
+        研究支援エナゴでは、英語論文の英文校正・英文校閲・論文校閲から投稿サポートまで、
+        学術研究文に特化したトータルソリューションを提供しています。
+      </p>
+    </div>
+
+    <!-- Sort & Filter -->
+    <div class="d-flex justify-content-end gap-2 mb-3">
+      <select class="custom-select form-control mb-3" [(ngModel)]="selectedSort" (change)="sortByDate(selectedSort)">
+        <option value="" disabled selected> Sort by</option>
+        <option value="newest">Newest Date</option>
+        <option value="oldest">Oldest Date</option>
+      </select>
+
+
+
+      <select class="custom-select form-control mb-3" [(ngModel)]="selectedFilter"
+        (change)="applyPublisher(selectedFilter)">
+        <option value="" disabled selected> Filter by</option>
+        <option *ngFor="let pub of uniqueSalevelone" [value]="pub">
+          {{ pub }}
+        </option>
+      </select>
+
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="row g-4">
+
+      <!-- CARD 1 -->
+      <div class="col-lg-6 col-md-6" *ngFor="let item of paginatedFilteredList">
+
+        <!-- {{item|json}} -->
+        <div class="service-card">
+          <div class="d-flex">
+            <img [src]="getJournalImage(item)" class="book-img" alt="journal image" />
+            <div class="card-info">
+              <p class="publisher">出版社: {{item?.publisher?.publishername}}</p>
+
+              <p class="journal">ジャーナル: {{item?.journal?.title}}</p>
+
+              <p class="impact">インパクトファクター: <strong>{{item?.journal?.impactfactor}}</strong></p>
+
+              <p class="title">
+                論文のタイトル:
+                <a href="#" class="title-link">{{item?.papertitle}}</a>
+              </p>
+
+              <p class="author">著者: {{item.coauthors}}</p>
+
+              <a href="#" class="readmore">もっと読む →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="d-flex justify-content-center mt-3">
+        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="paperList.length"
+          aria-label="Pagination">
+        </ngb-pagination>
+      </div>
+
+      <!-- CARD 2 (duplicate for demo) -->
+      <!-- <div class="col-lg-6 col-md-6">
+        <div class="service-card">
+          <div class="d-flex">
+            <img src="./assets/images/product.svg" class="book-img" alt="product image">
+            <div class="card-info">
+              <p class="publisher">出版社: John Wiley & Sons, Inc.</p>
+              <p class="journal">ジャーナル: Advanced Functional Materials</p>
+              <p class="impact">インパクトファクター: <strong>10.18</strong></p>
+              <p class="title">
+                論文のタイトル:
+                <a href="#" class="title-link">Extremely Low Operating Voltage Green Phosphorescent Organic Light-Emitting Devices</a>
+              </p>
+              <p class="author">著者: S. H.</p>
+              <a href="#" class="readmore">もっと読む →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+   -->
+      <!-- CARD 3 -->
+      <!-- <div class="col-lg-6 col-md-6">
+        <div class="service-card">
+          <div class="d-flex">
+            <img src="./assets/images/product.svg" class="book-img" alt="product image">
+            <div class="card-info">
+              <p class="publisher">出版社: John Wiley & Sons, Inc.</p>
+              <p class="journal">ジャーナル: Advanced Functional Materials</p>
+              <p class="impact">インパクトファクター: <strong>10.18</strong></p>
+              <p class="title">
+                論文のタイトル:
+                <a href="#" class="title-link">Extremely Low Operating Voltage Green Phosphorescent Organic Light-Emitting Devices</a>
+              </p>
+              <p class="author">著者: S. H.</p>
+              <a href="#" class="readmore">もっと読む →</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <!-- CARD 1 -->
+      <!-- <div class="col-lg-6 col-md-6">
+        <div class="service-card">
+          <div class="d-flex">
+            <img src="./assets/images/product.svg" class="book-img" alt="product image">
+            <div class="card-info">
+              <p class="publisher">出版社: John Wiley & Sons, Inc.</p>
+  
+              <p class="journal">ジャーナル: Advanced Functional Materials</p>
+  
+              <p class="impact">インパクトファクター: <strong>10.18</strong></p>
+  
+              <p class="title">
+                論文のタイトル:
+                <a href="#" class="title-link">Extremely Low Operating Voltage Green Phosphorescent Organic Light-Emitting Devices</a>
+              </p>
+  
+              <p class="author">著者: S. H.</p>
+  
+              <a href="#" class="readmore">もっと読む →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+   -->
+      <!-- CARD 2 (duplicate for demo) -->
+      <!-- <div class="col-lg-6 col-md-6">
+        <div class="service-card">
+          <div class="d-flex">
+            <img src="./assets/images/product.svg" class="book-img" alt="product image">
+            <div class="card-info">
+              <p class="publisher">出版社: John Wiley & Sons, Inc.</p>
+              <p class="journal">ジャーナル: Advanced Functional Materials</p>
+              <p class="impact">インパクトファクター: <strong>10.18</strong></p>
+              <p class="title">
+                論文のタイトル:
+                <a href="#" class="title-link">Extremely Low Operating Voltage Green Phosphorescent Organic Light-Emitting Devices</a>
+              </p>
+              <p class="author">著者: S. H.</p>
+              <a href="#" class="readmore">もっと読む →</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- CARD 3 -->
+      <!-- <div class="col-lg-6 col-md-6">
+        <div class="service-card">
+          <div class="d-flex">
+            <img src="./assets/images/product.svg" class="book-img" alt="product image">
+            <div class="card-info">
+              <p class="publisher">出版社: John Wiley & Sons, Inc.</p>
+              <p class="journal">ジャーナル: Advanced Functional Materials</p>
+              <p class="impact">インパクトファクター: <strong>10.18</strong></p>
+              <p class="title">
+                論文のタイトル:
+                <a href="#" class="title-link">Extremely Low Operating Voltage Green Phosphorescent Organic Light-Emitting Devices</a>
+              </p>
+              <p class="author">著者: S. H.</p>
+              <a href="#" class="readmore">もっと読む →</a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+    </div>
+
+  </div>
+
+</section>
+<section class="quote-box">
+  <div class="quote-container">
+
+    <!-- Header -->
+    <div class="quote-header">
+      <h3>お見積もり・ご注文</h3>
+      <p>メールは年中無休の24時間営業｜1時間以内に返信します</p>
+    </div>
+
+    <!-- Buttons Row -->
+    <div class="quote-buttons">
+      <a href="#" class="quote-btn">料金と納期</a>
+      <a href="#" class="quote-btn">料金シュミレーション<br><span>1分以内に概算ご料金がわかる！</span></a>
+    </div>
+
+    <!-- Bottom Information -->
+    <div class="quote-info">
+      <div class="info-left">
+        <p><strong>電話受付</strong>｜月–土 10:00～19:00</p>
+        <p>📞 03-4580-9713</p>
+      </div>
+
+      <div class="info-right">
+        <p><strong>月–日 24時間営業</strong></p>
+        <p>✉ request@enago.com</p>
+      </div>
+    </div>
+
+  </div>
+</section>

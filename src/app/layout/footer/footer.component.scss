@@ -1,0 +1,144 @@
+/* FOOTER MAIN */
+.footer-section {
+    background: #000;
+    color: #fff;
+    padding: 40px 0;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* MAIN WRAPPER */
+  .footer-wrapper {
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* 4 COLUMN GRID */
+  .footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  
+  .footer-col {
+    flex: 1 1 220px;
+  }
+  
+  .footer-col h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-col ul li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+  
+  /* CONTACT BUTTON */
+  .footer-btn {
+    display: inline-block;
+    background: #2ea3ff;
+    padding: 12px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+  
+  .footer-btn span {
+    font-size: 12px;
+  }
+  
+  /* SOCIAL */
+  .footer-social span {
+    font-size: 22px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  /* TEXT DESCRIPTION */
+  .footer-about {
+    margin: 40px 0 20px;
+  }
+  
+  .footer-about h4 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-about p {
+    font-size: 14px;
+    opacity: 0.85;
+    margin-bottom: 10px;
+    line-height: 1.6;
+  }
+  
+  /* PARTNERS */
+  .footer-partners h4,
+  .footer-services h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .partner-row img,
+  .service-logos img {
+    margin-right: 20px;
+  }
+  
+  /* SERVICE LOGOS */
+  .service-logos img {
+    height: 32px;
+  }
+  
+  /* SPACING UTILITY */
+  .mt-20 {
+    margin-top: 20px;
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .footer-grid {
+      flex-direction: column;
+    }
+  
+    .partner-row img,
+    .service-logos img {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .footer-btn {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-social span {
+      font-size: 26px;
+    }
+  
+    .service-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+  }
+  
+  .partner-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 85px;
+   
+  }
+/* below card section end */

@@ -1,0 +1,205 @@
+<div class="mb-navbar d-md-none">
+  <div class="logo"><img src="../../../assets/images/company_logo.png" class="logo" alt="Enago Logo"></div>
+
+  <button class="menu-toggle" (click)="menuOpen = !menuOpen">
+    ☰
+
+  </button>
+  
+  <nav class="side-menu" [class.active]="menuOpen">
+    <button class="close-btn" (click)="toggleMenu()">✕</button>
+    <ul>
+      <li><a href="#"><span class="home-icon">🏠</span></a></li>
+      <li><a href="#">異文化交流サービス</a></li>
+      <li><a href="#">現地体験サービス</a></li>
+      <li><a href="#">学術機関</a></li>
+      <li><a href="#">学術機関</a></li>
+      <li><a href="#">校正・品質 アカデミー</a></li>
+      <li><a href="#">アカデミー</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </nav>
+</div>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="alert-bar">
+          <div class="alert-left">
+            <span class="alert-icon">
+              <img src="../../../assets/images/top_header_icons.png" width="25" height="25" alt="icon" loading="lazy">
+            </span>
+
+            <p class="alert-text mb-0">
+              <strong>【新規ご利用の方限定】</strong>
+              トップインパクト英文校正サービスが表示価格より15%割引！！
+            </p>
+            <a href="#" class="alert-bar-link">お見積り・ご注文</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6">
+        <div class="alert-bar">
+          <div class="alert-left">
+            <span class="alert-icon">
+              <img src="../../../assets/images/top_header_half.png" width="20" height="25" alt="icon" loading="lazy">
+            </span>
+
+            <p class="alert-text mb-0">
+              <strong>【新規ご利用の方限定】</strong>
+              トップインパクト英文校正サービスが表示価格より15%割引！！
+            </p>
+
+            <a href="#" class="alert-bar-link">お見積り・ご注文</a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="main-header container d-none d-lg-block">
+  <div class="main-sub-header">
+    <div class="header-left">
+      <img src="../../../assets/images/company_logo.png" class="logo" alt="Enago Logo">
+    </div>
+
+    <div class="header-right d-flex">
+
+      <div class="jp-dropdown" (click)="isOpen = !isOpen">
+        <span class="icon">
+          <img src="../../../assets/images/headphone.png" width="20" height="20" alt="icon" loading="lazy">
+        </span>
+        <span class="label">お問い合わせ</span>
+        <span class="arrow" [class.rotate]="isOpen">▼</span>
+      </div>
+
+      <ul class="dropdown-menu" [class.show]="isOpen">
+        <li><a href="#">電話サポート</a></li>
+        <li><a href="#">メールサポート</a></li>
+        <li><a href="#">ライブチャット</a></li>
+      </ul>
+
+      <button class="login-btn">
+        <span class="icon">
+          <img src="../../../assets/images/group.png" class="group-icon" alt="group" loading="lazy">
+        </span>
+        <span class="label">マイページへログイン</span>
+      </button>
+
+      <button class="jp-btn">お見積もり・ご注文</button>
+    </div>
+  </div>
+</header>
+
+
+<!-- <nav class="jp-menu" [class.active]="menuOpen">
+    <ul class="jp-menu-list">
+      <li><a href="#"><span class="home-icon">🏠</span></a></li>
+  
+      <li class="dropdown">
+        <a href="#">異文化交流サービス <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Option 1</a></li>
+          <li><a href="#">Option 2</a></li>
+          <li><a href="#">Option 3</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="#">現地体験サービス <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Option 1</a></li>
+          <li><a href="#">Option 2</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="#">学術機関 <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Option A</a></li>
+          <li><a href="#">Option B</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="#">お見積り・ご注文 <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Order 1</a></li>
+          <li><a href="#">Order 2</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="#">校正・品質 <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Quality 1</a></li>
+          <li><a href="#">Quality 2</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="#">アカデミー <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Academy 1</a></li>
+          <li><a href="#">Academy 2</a></li>
+        </ul>
+      </li>
+  
+      <li class="dropdown">
+        <a href="#">FAQ <span class="arrow">▼</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Q1</a></li>
+          <li><a href="#">Q2</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav> -->
+
+<nav class="navbar navbar-expand-md custom-nav">
+
+
+  <div class="container">
+    <div class="collapse navbar-collapse" id="mainMenu">
+      <ul class="navbar-nav text-center">
+
+        <li class="nav-item">
+          <span class="nav-link-home" href="#"><span class="home-icon">🏠</span></span>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">異文化交流サービス</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">現地体験サービス</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">学術機関</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">お見積り・ご注文</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">校正・品質</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">アカデミー</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#">FAQ</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

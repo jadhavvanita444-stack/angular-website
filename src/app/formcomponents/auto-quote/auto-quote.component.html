@@ -1,0 +1,83 @@
+<div class="quote-card" *ngIf="!submitted; else thankYouTpl">
+    <h3 class="quote-title">Get quote in a minute</h3>
+  
+    <form [formGroup]="quoteForm" (ngSubmit)="submitQuote()">
+      <!-- Total word count -->
+      <input
+        type="number"
+        class="form-control --pencil mb-2"
+        placeholder="Total word count of manuscript"
+        formControlName="wordcount"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('wordcount')?.touched &&
+          quoteForm.get('wordcount')?.invalid
+        "
+      >
+        Please enter total word count.
+      </small>
+  
+      <!-- Email -->
+      <input
+        type="email"
+        class="form-control --email mb-2"
+        placeholder="E-mail"
+        formControlName="email"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('email')?.touched && quoteForm.get('email')?.invalid
+        "
+      >
+        Please enter a valid email.
+      </small>
+  
+      <!-- Phone -->
+      <input
+        type="text"
+        class="form-control --phone mb-2"
+        placeholder="Contact Number"
+        formControlName="phone"
+      />
+      <small
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('phone')?.touched && quoteForm.get('phone')?.invalid
+        "
+      >
+        Please enter a valid 10-digit phone number.
+      </small>
+  
+      <!-- Radio buttons -->
+      <div class="radio-row mb-3">
+        <label>
+          <input type="radio" value="new" formControlName="customerType" />
+          New
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="existing"
+            formControlName="customerType"
+          />
+          Existing
+        </label>
+      </div>
+  
+      <!-- Submit button -->
+      <button type="submit" class="btn-submit" [disabled]="quoteForm.invalid">
+        Get A Quote
+      </button>
+    </form>
+  </div>
+  
+  <!-- Thank you block after submit -->
+  <ng-template #thankYouTpl>
+    <div class="quote-card thank-you">
+      <h3>Thank you!</h3>
+      <p>Your quote request has been submitted successfully.</p>
+    </div>
+  </ng-template>
